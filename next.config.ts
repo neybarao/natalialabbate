@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   basePath: basePath || undefined,
   assetPrefix: basePath || undefined,
   trailingSlash: true,
+  // Expose basePath to client code so we can prefix static assets manually
+  // (Next only auto-prefixes for <Image> and internal navigation).
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   turbopack: {
     root: path.join(__dirname),
   },

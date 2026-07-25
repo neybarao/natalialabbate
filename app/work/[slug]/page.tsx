@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SiteHeader from "../../site-header";
 import { CASES, type CaseSection } from "../../cases";
+import { ZoomableHero, ZoomableGallery } from "../../zoomable";
 
 export function generateStaticParams() {
   return CASES.map((c) => ({ slug: c.slug }));
@@ -101,7 +102,11 @@ export default async function CasePage({ params }: Params) {
             </dl>
           </div>
 
-          <div className="case-hero-media reveal" aria-hidden />
+          {c.heroImage ? (
+            <ZoomableHero src={c.heroImage} alt={c.heroAlt ?? c.title} />
+          ) : (
+            <div className="case-hero-media case-hero-media--placeholder reveal" aria-hidden />
+          )}
 
           {c.disclaimer && <p className="case-disclaimer">{c.disclaimer}</p>}
 
@@ -147,6 +152,13 @@ export default async function CasePage({ params }: Params) {
                   <li key={i}>{r}</li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {c.gallery && c.gallery.length > 0 && (
+            <section className="case-gallery reveal" aria-labelledby="gallery-title">
+              <h2 id="gallery-title">App preview</h2>
+              <ZoomableGallery images={c.gallery} layout={c.galleryLayout} />
             </section>
           )}
 

@@ -48,6 +48,21 @@ export type Case = {
   results?: string[];
   /** Optional testimonials block. */
   testimonials?: CaseTestimonial[];
+  /**
+   * Absolute /public path to the hero image used on the home card and the
+   * case hero. Use `asset()` at render time to prefix the basePath.
+   */
+  heroImage?: string;
+  /** Optional alt text for heroImage. */
+  heroAlt?: string;
+  /** Gallery of images rendered at the bottom of the case, "App preview". */
+  gallery?: { src: string; alt: string; wide?: boolean }[];
+  /**
+   * How the gallery is laid out. Default "grid" is a 2-column responsive
+   * grid; "stack" renders each image full-width one after another — better
+   * when images have varied intrinsic dimensions.
+   */
+  galleryLayout?: "grid" | "stack";
 };
 
 export const CASES: Case[] = [
@@ -276,6 +291,25 @@ export const CASES: Case[] = [
       "Overall in-store service time reduced by around 65% — measured by both tester perception and stopwatch timing.",
       "Buying-contract time reduced by 90% after the customer-buying-offer redesign.",
       "Average usability rating across all tests: 9.3 / 10.",
+    ],
+    heroImage: "/imgs/ventas/hero.webp",
+    heroAlt: "Ventas — Grupo Plaenge app preview with brand mark and iPad mockups.",
+    galleryLayout: "stack",
+    gallery: [
+      { src: "/imgs/ventas/01.png", alt: "User personas: Prospector and Vendedor A — profiles, needs and pains.", wide: true },
+      { src: "/imgs/ventas/02.png", alt: "User personas continued: Vendedor B and Hostess." },
+      { src: "/imgs/ventas/03.png", alt: "Design sprint artefacts from the DB1 kickoff." },
+      { src: "/imgs/ventas/04.png", alt: "Design sprint prioritisation and solution mapping." },
+      { src: "/imgs/ventas/05.png", alt: "Product screen: available units grid with fit-by-profile and floor plan." },
+      { src: "/imgs/ventas/06.png", alt: "Product screen: buyer registration and multi-buyer flow." },
+      { src: "/imgs/ventas/07.png", alt: "Product screen: customer offer preparation." },
+      { src: "/imgs/ventas/08.png", alt: "Product screen: purchase simulator — custom terms." },
+      { src: "/imgs/ventas/09.png", alt: "Product screen: purchase simulator — separated by product type." },
+      { src: "/imgs/ventas/10.png", alt: "Product screen: full buying-offer flow." },
+      { src: "/imgs/ventas/11.jpg", alt: "iPad in real store use — hero context shot." },
+      { src: "/imgs/ventas/12.png", alt: "Product screen: sale contract initiation." },
+      { src: "/imgs/ventas/13.png", alt: "Product screen: hostess arrival notification." },
+      { src: "/imgs/ventas/14.png", alt: "Product screen: calendar and daily agenda view." },
     ],
   },
 
@@ -510,6 +544,12 @@ export const CASES: Case[] = [
       "5 out of 5 customers who saw the product expressed interest and signed up for the pre-release.",
       "A 7-day MVP buildout to introduce Voice AI capabilities to the Campaign Management product was delivered and demoed successfully.",
       "New Design System shipped without significant front-end rework — freeing engineering to focus on API and data-layer work.",
+    ],
+    heroImage: "/imgs/akumen/hero.webp",
+    heroAlt: "Akumen — brand mark and executive dashboard preview.",
+    gallery: [
+      { src: "/imgs/akumen/01.png", alt: "Akumen dashboard concept — analytics overview." , wide: true },
+      { src: "/imgs/akumen/02.png", alt: "Akumen AI-agent surface — chat and next-best-action recommendations.", wide: true },
     ],
     testimonials: [
       {

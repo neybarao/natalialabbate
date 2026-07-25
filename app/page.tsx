@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "./site-header";
 import { CASES } from "./cases";
+import { asset } from "./assets";
 
 const PROCESS = [
   {
@@ -76,7 +77,19 @@ export default function Home() {
                 className="project reveal"
                 aria-label={`${c.title} — ${c.tag}`}
               >
-                <span className="project__media" aria-hidden />
+                <span
+                  className="project__media"
+                  aria-hidden
+                  style={
+                    c.heroImage
+                      ? {
+                          backgroundImage: `url(${asset(c.heroImage)})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }
+                      : undefined
+                  }
+                />
                 <span className="project__num mono">{c.number}</span>
                 <span className="project__year mono">{c.year}</span>
                 <span className="project__caption">
