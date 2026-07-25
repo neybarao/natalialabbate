@@ -1,25 +1,29 @@
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 
-export default function SiteHeader() {
+type Props = { variant?: "home" | "case" };
+
+export default function SiteHeader({ variant = "home" }: Props) {
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="Natalia L'Abbate — Home">
-        <span className="brand__avatar" aria-hidden>
-          NL
-        </span>
-        <span className="brand__lines">
-          <span className="brand__name">Natalia L&apos;Abbate</span>
-          <span className="brand__mail">natalia.chiota@gmail.com</span>
-        </span>
-      </Link>
-
-      <nav className="header-nav" aria-label="Primary">
-        <Link href="/#work">Work</Link>
-        <Link href="/#about">About</Link>
-        <Link href="/#process">Process</Link>
-        <Link href="/#contact">Contact</Link>
-      </nav>
+      {variant === "case" ? (
+        <Link href="/" className="back-link" aria-label="Back to homepage">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back to homepage
+        </Link>
+      ) : (
+        <Link href="/" className="brand" aria-label="Natalia L'Abbate — Home">
+          <span className="brand__avatar" aria-hidden>
+            NL
+          </span>
+          <span className="brand__lines">
+            <span className="brand__name">Natalia L&apos;Abbate</span>
+            <span className="brand__mail">natalia.chiota@gmail.com</span>
+          </span>
+        </Link>
+      )}
 
       <div className="header-tools">
         <ThemeToggle />

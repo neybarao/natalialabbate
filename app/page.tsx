@@ -47,39 +47,28 @@ export default function Home() {
 
       <main className="page">
         <section className="hero container" aria-labelledby="hero-title">
-          <div className="hero-eyebrow">Available for select projects · 2026</div>
-          <h1 id="hero-title" className="hero-headline">
-            Senior Product Designer
-          </h1>
-          <p className="hero-sub">
-            Based in São Paulo, working with teams worldwide. I combine research,
-            strategy, and craft to ship human-centred products that scale as
-            businesses grow — from framing the right problem to prototyping,
-            testing, and iterating on outcomes.
-          </p>
-          <div className="hero-bottom">
-            <span>Scroll to explore</span>
-            <span className="hero-bottom__dot" aria-hidden>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 5v14M5 12l7 7 7-7" />
-              </svg>
-            </span>
+          <div className="hero-copy">
+            <h1 id="hero-title" className="hero-headline">
+              Senior Product Designer
+            </h1>
+            <div className="hero-foot">
+              <p className="hero-sub">
+                Based in São Paulo, working with teams worldwide. I combine
+                research, strategy, and craft to ship human-centred products
+                that scale as businesses grow.
+              </p>
+              <a href="#work" className="hero-scroll" aria-label="Scroll to work">
+                <span>Scroll to explore</span>
+                <span className="hero-scroll__dot" aria-hidden>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        </section>
 
-        <section id="work" className="section container" aria-labelledby="work-title">
-          <header className="section-head">
-            <h2 id="work-title" className="section-title">
-              Selected work
-            </h2>
-            <p className="section-lede">
-              A short selection of recent product design work across healthcare,
-              financial services, AI, and real estate. Click any project to read
-              the full case study.
-            </p>
-          </header>
-
-          <div className="projects">
+          <div id="work" className="projects" aria-label="Selected work">
             {CASES.map((c) => (
               <Link
                 key={c.slug}
@@ -89,12 +78,10 @@ export default function Home() {
               >
                 <span className="project__media" aria-hidden />
                 <span className="project__num mono">{c.number}</span>
-                <span className="project__meta">
+                <span className="project__year mono">{c.year}</span>
+                <span className="project__caption">
                   <span className="project__title">{c.title}</span>
-                  <span className="project__chips">
-                    <span className="chip">{c.year}</span>
-                    <span className="chip">{c.tag}</span>
-                  </span>
+                  <span className="project__tag mono">{c.tag}</span>
                 </span>
               </Link>
             ))}
