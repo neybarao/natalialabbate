@@ -49,13 +49,13 @@ export default function Home() {
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
             <h1 id="hero-title" className="hero-headline">
-              Senior Product Designer
+              Natalia L&apos;Abbate
             </h1>
             <div className="hero-foot">
               <p className="hero-sub">
-                Based in São Paulo, working with teams worldwide. I combine
-                research, strategy, and craft to ship human-centred products
-                that scale as businesses grow.
+                Senior Product Designer based in São Paulo, working with teams
+                worldwide. I combine research, strategy, and craft to ship
+                human-centred products that scale as businesses grow.
               </p>
               <a href="#work" className="hero-scroll" aria-label="Scroll to work">
                 <span>Scroll to explore</span>
