@@ -17,6 +17,9 @@ export default function Animations() {
       return;
     }
 
+    // Opt-in to the hidden-first state now that we know JS is running.
+    document.documentElement.classList.add("has-anim");
+
     const ease = "power3.out";
     const triggers: ScrollTrigger[] = [];
 
@@ -45,8 +48,16 @@ export default function Animations() {
 
     const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
 
+    // Safety net: if any reveal is still hidden after the page settles,
+    // force it visible. Guards against edge cases where the batch never
+    // fires (fast route change, aggressive browsers, missed layout).
+    const safety = window.setTimeout(() => {
+      gsap.set(".reveal", { opacity: 1, y: 0, clearProps: "all" });
+    }, 2000);
+
     return () => {
       cancelAnimationFrame(raf);
+      clearTimeout(safety);
       triggers.forEach((t) => t.kill());
     };
   }, [pathname]);

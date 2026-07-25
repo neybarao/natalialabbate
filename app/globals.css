@@ -42,7 +42,7 @@
   --radius: 18px;
   --radius-lg: 28px;
 
-  --page-x: clamp(20px, 4vw, 56px);
+  --page-x: clamp(24px, 5vw, 80px);
   --gap: clamp(16px, 2vw, 24px);
 
   --dur: 0.5s;
@@ -141,7 +141,7 @@ p {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: none;
   margin: 0 auto;
   width: 100%;
 }
@@ -1241,10 +1241,16 @@ p {
 }
 
 /* ---------- reveal (GSAP will overwrite) ---------- */
+/* Default visible; JS opts elements in to the hidden state on mount so
+ * layouts stay accessible if GSAP fails to load or fire in a browser. */
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.has-anim .reveal {
   opacity: 0;
   transform: translateY(24px);
-  will-change: opacity, transform;
 }
 
 @media (prefers-reduced-motion: reduce) {

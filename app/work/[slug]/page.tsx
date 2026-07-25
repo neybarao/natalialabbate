@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const c = CASES.find((x) => x.slug === slug);
   if (!c) return {};
-  const description = c.tagline ?? `${c.title} — case study by Natalia L'Abbate.`;
+  const description = c.tagline ?? `${c.title}, case study by Natalia L'Abbate.`;
   return {
     title: c.title,
     description,
@@ -92,7 +92,7 @@ export default async function CasePage({ params }: Params) {
               <span className="case-metaline__sep" aria-hidden>◆</span>
               <div className="case-metaline__item">
                 <dt>Tools</dt>
-                <dd>{c.tools?.length ? c.tools.join(", ") : "—"}</dd>
+                <dd>{c.tools?.length ? c.tools.join(", ") : "None"}</dd>
               </div>
               <span className="case-metaline__sep" aria-hidden>◆</span>
               <div className="case-metaline__item">
@@ -156,7 +156,7 @@ export default async function CasePage({ params }: Params) {
           )}
 
           {c.gallery && c.gallery.length > 0 && (
-            <section className="case-gallery reveal" aria-labelledby="gallery-title">
+            <section className="case-gallery" aria-labelledby="gallery-title">
               <h2 id="gallery-title">App preview</h2>
               <ZoomableGallery images={c.gallery} layout={c.galleryLayout} />
             </section>

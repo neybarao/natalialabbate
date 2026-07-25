@@ -10,6 +10,8 @@ env:
   # Project page under neybarao.github.io/natalialabbate
   # (also served via the account CNAME at www.neybarao.com/natalialabbate/).
   BASE_PATH: "/natalialabbate"
+  # GA4 measurement ID. Public by design (rendered into the client bundle).
+  NEXT_PUBLIC_ANALYTICS_ID: "G-CKCRVNBKNS"
 
 permissions:
   contents: read
@@ -36,6 +38,7 @@ jobs:
       - run: npx next build
         env:
           BASE_PATH: ${{ env.BASE_PATH }}
+          NEXT_PUBLIC_ANALYTICS_ID: ${{ env.NEXT_PUBLIC_ANALYTICS_ID }}
 
       # GitHub Pages ignores folders starting with an underscore (like _next)
       # unless a .nojekyll file exists at the root of the artifact.

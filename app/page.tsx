@@ -23,21 +23,21 @@ const PROCESS = [
     title: "Define, Wireframe & Prototype",
     sub: "Structure and interaction",
     body:
-      "Now that we know where your business is heading and what your users need, I create information architecture, user flows, and wireframes to validate that the idea makes sense for the target audience. I think several steps ahead to avoid rework. Depending on time and level of certainty, I work across fidelity levels — from sketches to detailed mockups — and prepare a prototype ready for testing. This phase includes a design system check or creation.",
+      "Now that we know where your business is heading and what your users need, I create information architecture, user flows, and wireframes to validate that the idea makes sense for the target audience. I think several steps ahead to avoid rework. Depending on time and level of certainty, I work across fidelity levels, from sketches to detailed mockups, and prepare a prototype ready for testing. This phase includes a design system check or creation.",
   },
   {
     icon: "📝",
     title: "User Testing",
     sub: "Validate with real people",
     body:
-      "As soon as the prototype is ready, we test with real users to check if we're actually solving their problems — moderated or unmoderated, whichever fits best. Depending on results we either move to final adjustments and handoff, or step back, redesign what wasn't clear, and test again until we're confident. I document all findings and share them with the broader team so everyone is aligned before handoff.",
+      "As soon as the prototype is ready, we test with real users to check if we're actually solving their problems, moderated or unmoderated, whichever fits best. Depending on results we either move to final adjustments and handoff, or step back, redesign what wasn't clear, and test again until we're confident. I document all findings and share them with the broader team so everyone is aligned before handoff.",
   },
   {
     icon: "📊",
     title: "Handoff, Follow-up & Iterate",
     sub: "Ship and improve",
     body:
-      "My main goal here is to make sure PMs, BAs, Devs, and QAs have everything they need, well documented, to move forward. I stay in close communication so everything runs smoothly — and when it doesn't, we get back on track together. Where it makes sense, I create a metric follow-up strategy (or propose A/B tests, feature flags, or phased rollouts if uncertainty is still high) and use analytics to iterate and keep improving the product.",
+      "My main goal here is to make sure PMs, BAs, Devs, and QAs have everything they need, well documented, to move forward. I stay in close communication so everything runs smoothly, and when it doesn't, we get back on track together. Where it makes sense, I create a metric follow-up strategy (or propose A/B tests, feature flags, or phased rollouts if uncertainty is still high) and use analytics to iterate and keep improving the product.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function Home() {
             <div className="hero-foot">
               <p className="hero-sub">
                 Senior Product Designer based in São Paulo, working with teams
-                worldwide. I combine research, strategy, and craft to ship
-                human-centred products that scale as businesses grow.
+                worldwide. I combine research, strategy, and craft to build
+                products that fit the people who use them.
               </p>
               <a href="#work" className="hero-scroll" aria-label="Scroll to work">
                 <span>Scroll to explore</span>
@@ -107,8 +107,8 @@ export default function Home() {
               About
             </h2>
             <p className="section-lede">
-              Former photographer and fashion designer turned Product Designer —
-              same eye for framing, now applied to human-centred design.
+              Former photographer and fashion designer turned Product Designer.
+              Same eye for detail, now applied to products.
             </p>
           </header>
 
@@ -118,7 +118,7 @@ export default function Home() {
                 As a former photographer and fashion designer, I&apos;ve always
                 been passionate about framing things correctly and understanding
                 people. As a Product Designer, I bring that same eye to solving
-                business problems through human-centred design — focusing not just
+                business problems through human-centred design, focusing not just
                 on the final deliverable, but on delivering value throughout the
                 entire process: from framing the right problem and aligning user
                 needs with business goals, to prototyping, testing, and iterating
@@ -130,14 +130,14 @@ export default function Home() {
                 I combine user research, competitive analysis, and strategic
                 thinking to build solutions that scale as businesses grow. Working
                 in dual-track discovery, I lead cross-functional collaboration
-                across design, product, and engineering — shipping on time and
+                across design, product, and engineering, shipping on time and
                 within budget while anticipating future needs, reducing technical
                 debt, and maximizing ROI for startups and enterprises.
               </p>
               <p>
                 My work spans the full product design cycle: design strategy,
                 problem framing, design systems, interaction design,
-                accessibility, and developer handoff — always with a focus on
+                accessibility, and developer handoff, always with a focus on
                 measurable impact and long-term product thinking.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function Home() {
               Process
             </h2>
             <p className="section-lede">
-              An iterative process that can start from any step — add, remove,
+              An iterative process that can start from any step. Add, remove,
               and explore other methodologies as the problem demands.
             </p>
           </header>
@@ -194,12 +194,11 @@ export default function Home() {
         <section id="contact" className="section contact container" aria-labelledby="contact-title">
           <div className="contact-card reveal">
             <h2 id="contact-title" className="contact-headline">
-              Let&apos;s work on something meaningful.
+              Let&apos;s work together.
             </h2>
             <p className="contact-body">
-              I&apos;m taking on select product design engagements. If you have a
-              problem worth framing, a product to ship, or a team to support —
-              let&apos;s talk.
+              Available for new product design work. Reach out and let&apos;s
+              talk.
             </p>
             <div className="contact-links">
               <a

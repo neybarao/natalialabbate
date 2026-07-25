@@ -14,7 +14,7 @@ export function ZoomableHero({ src, alt }: { src: string; alt: string }) {
     <>
       <button
         type="button"
-        className="case-hero-media case-hero-media--zoom reveal"
+        className="case-hero-media case-hero-media--zoom"
         onClick={() => setOpen(true)}
         aria-label={`Open image: ${alt}`}
       >
