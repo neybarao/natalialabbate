@@ -4,6 +4,7 @@ import "./globals.css";
 import LoadingScreen from "./loading-screen";
 import Animations from "./animations";
 import Analytics from "./analytics";
+import ScrollTop from "./scroll-top";
 
 const interTight = Inter_Tight({
   variable: "--font-display",
@@ -133,6 +134,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className={interTight.variable}>
+        <ScrollTop />
         <LoadingScreen />
         <Animations />
         {children}
