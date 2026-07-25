@@ -110,13 +110,28 @@ const jsonLd = {
   ],
 };
 
+const themeInitScript = `(() => {
+  try {
+    const stored = localStorage.getItem('theme');
+    const t = stored === 'light' || stored === 'dark'
+      ? stored
+      : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (_) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={interTight.variable}>
         <LoadingScreen />
         <Animations />

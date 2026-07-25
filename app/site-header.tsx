@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "./theme-toggle";
 
 export default function SiteHeader() {
   return (
@@ -20,7 +21,9 @@ export default function SiteHeader() {
         <Link href="/#contact">Contact</Link>
       </nav>
 
-      <div className="social" aria-label="Social">
+      <div className="header-tools">
+        <ThemeToggle />
+        <div className="social" aria-label="Social">
         <a
           href="https://www.linkedin.com/in/natalialabbate/"
           target="_blank"
@@ -50,6 +53,7 @@ export default function SiteHeader() {
             <path d="m3 7 9 6 9-6" />
           </svg>
         </a>
+        </div>
       </div>
     </header>
   );
