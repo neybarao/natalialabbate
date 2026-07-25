@@ -49,10 +49,10 @@ export default function Animations() {
     const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
 
     // Safety net: if any reveal is still hidden after the page settles,
-    // force it visible. Guards against edge cases where the batch never
-    // fires (fast route change, aggressive browsers, missed layout).
+    // force it visible via inline styles (no clearProps — otherwise the
+    // has-anim CSS rule would immediately re-hide it).
     const safety = window.setTimeout(() => {
-      gsap.set(".reveal", { opacity: 1, y: 0, clearProps: "all" });
+      gsap.set(".reveal", { opacity: 1, y: 0 });
     }, 2000);
 
     return () => {

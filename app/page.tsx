@@ -74,7 +74,7 @@ export default function Home() {
               <Link
                 key={c.slug}
                 href={`/work/${c.slug}`}
-                className="project reveal"
+                className="project"
                 aria-label={`${c.title} — ${c.tag}`}
               >
                 <span
